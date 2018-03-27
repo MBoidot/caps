@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import generic
-from django.views.generic import indexV, DetailView, FormView
+from django.views.generic import DetailView, FormView
     
 
 def rules_index(request):

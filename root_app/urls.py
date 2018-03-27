@@ -3,6 +3,7 @@ from django.contrib import admin
 from home import views
 from rulz import views
 from shop import views
+from . import views
 
 
 urlpatterns = [
@@ -11,5 +12,5 @@ urlpatterns = [
     url(r'^rules/',include('rulz.urls')),
     url(r'^shop/',include('shop.urls')),
 
-    url(r'^$',views.HomeView),
+    url(r'^$',include('home.urls')),
 ]
