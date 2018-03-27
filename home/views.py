@@ -1,4 +1,3 @@
-from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render, redirect
 from django.views import generic
 

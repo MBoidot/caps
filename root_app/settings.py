@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'PMALL.urls'
+ROOT_URLCONF = 'root_app.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'PMALL.wsgi.application'
+WSGI_APPLICATION = 'root_app.wsgi.application'
 
 
 # Database
