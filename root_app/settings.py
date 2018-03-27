@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
+    'rulz.apps.RulzConfig',
+    'shop.apps.ShopConfig',
 ]
 
 MIDDLEWARE = [
