@@ -6,5 +6,5 @@ from . import views
 app_name = 'rulz'
 
 urlpatterns = [
-    url(r'^$', views.rules_index, name='rulz_index'),
+    url(r'^', views.rules_index, name='rulz_index'),
 ]

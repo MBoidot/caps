@@ -12,5 +12,5 @@ urlpatterns = [
     url(r'^rules/',include('rulz.urls')),
     url(r'^shop/',include('shop.urls')),
 
-    url(r'^$',include('home.urls')),
+    url(r'^',include('home.urls')),
 ]
