@@ -1,6 +1,6 @@
-# django_skeleton_hielo
+# Caps project
 
-This repository is a simple Django project with a single app called "home"
+The caps project. A game for young and old, based on the famous beer game, adapted with ne features
 
 It uses template from https://templated.co/ called "Hielo" merged in the home/base.html template and the home_template.html template
 
