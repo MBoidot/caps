@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />   
+    <title>{% block title %}Rulz_base{% endblock %}</title>
+    
+    {% load static %}
+    
+    <link rel="shortcut icon" type="image/png" href="{%  static 'favicon.ico' %}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	
+    <script src="{% static 'home/jquery.min.js' %}"></script>
+    <script src="{% static 'home/jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'home/skel.min.js' %}"></script>	
+    <script src="{% static 'home/util.js' %}"></script>	
+    <script src="{% static 'home/main.js' %}"></script>
+</head>
+
+
+<body>
+
+<!-- personal navbar -->
+
+<!-- <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+
+
+
+
+
+
+        <!-- Items -->
+ <!--        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+                <li class="{% block albums_active %}{% endblock %}"><a href="{% url 'home:home' %}"><span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp; Albums</a></li>
+                <li class="{% block songs_active %}{% endblock %}"><a href="#"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp; Songs</a></li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'home:home' %}">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="q" value="{{ request.GET.q }}">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{% url 'home:home' %}">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Add Album
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+//-->
+
+
+<!-- templatad navbar -->
+
+
+<!-- Header -->
+			<header id="header" class="alt">
+				<div class="logo"><a href="{% url 'home:home' %}">Awesome Caps game <span>by Wag & Boid'</span></a></div>
+
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="{% url 'home:home' %}">Home</a></li>
+					<li><a href="{% url 'rulz:rulz_index' %}">Rules</a></li>
+					<li><a href="{% url 'shop:shop_index' %}">Shop</a></li>
+				</ul>
+			</nav>
+
+
+{% block body %}
+
+
+
+{% endblock %}
+
+
+</body>
+
+<footer id="footer">
+	<div class="container">
+		<ul class="icons">
+			<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+			<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		</ul>
+	</div>
+	<div class="copyright">
+		&copy; Untitled. All rights reserved. Template by <a href="https://templated.co">TEMPLATED</a>.
+	</div>
+</footer>
+</html>
