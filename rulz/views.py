@@ -13,7 +13,7 @@ class IndexView(generic.ListView):
     context_object_name = 'all_rulz'
 
     def get_queryset(self):
-        return Rulz.Objects.All()
+        return Rulz.objects.all()
 
 
 class RulzCreate(CreateView):
