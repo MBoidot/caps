@@ -13,4 +13,4 @@ class Rulz(models.Model):
     author = models.ForeignKey(User,on_delete=models.CASCADE)
 
     def get_absolute_url(self):
-        return reverse('rule_detail', kwargs={'pk': self.pk})
+        return reverse('rulz:rules_index', kwargs={'pk': self.pk})

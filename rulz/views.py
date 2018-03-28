@@ -4,9 +4,14 @@ from django.views.generic import DetailView, FormView
 from django.views.generic.edit import CreateView
 from rulz.models import Rulz
     
+def rules_home(request):
+    template_name = "rulz/home_template.html"
+    return render(request,template_name)
+
+
 
 def rules_index(request):
-    template_name = "rulz/home_template.html"
+    template_name = "rulz/index_template.html"
     return render(request,template_name)
 
 class RulzCreate(CreateView):
