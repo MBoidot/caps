@@ -5,10 +5,10 @@ from django.urls import reverse
 class Rulz(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
-    country = models.CharField(max_length=255)
-    city = models.CharField(max_length=255)
-    player_num = models.IntegerField()
-    complexity = models.IntegerField()
+    country = models.CharField(max_length=255,default='France')
+    city = models.CharField(max_length=255,default='Paris')
+    player_num = models.IntegerField(default=2)
+    complexity = models.IntegerField(default=1)
     created_on = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User,on_delete=models.CASCADE)
 

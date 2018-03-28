@@ -10,9 +10,14 @@ def rules_home(request):
 
 
 
-def rules_index(request):
+class rules_index(generic.ListView):
     template_name = "rulz/index_template.html"
-    return render(request,template_name)
+    context_object_name = 'all_rulz'
+
+    def get_queryset(self):
+        return Rulz.objects.all()
+
+
 
 class RulzCreate(CreateView):
     model = Rulz

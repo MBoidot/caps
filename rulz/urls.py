@@ -6,5 +6,6 @@ app_name = 'rulz'
 
 urlpatterns = [
     url(r'home', views.rules_home, name='rulz_home'),
-    url(r'create', views.RulzCreate.as_view(), name='rulz_create')
+
+    url(r'create/$', views.RulzCreate.as_view(), name='rulz_create'),
 ]
