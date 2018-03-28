@@ -10,7 +10,7 @@ class Rulz(models.Model):
     player_num = models.IntegerField(default=2)
     complexity = models.IntegerField(default=1)
     created_on = models.DateTimeField(auto_now_add=True)
-    author = models.ForeignKey(User,on_delete=models.CASCADE)
+    author = models.ForeignKey(User,on_delete=models.CASCADE,default=1)
 
     def get_absolute_url(self):
-        return reverse('rulz:rules_index', kwargs={'pk': self.pk})
+        return reverse('rulz:rulz_home')
