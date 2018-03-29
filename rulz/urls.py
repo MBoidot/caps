@@ -5,7 +5,7 @@ from . import views
 app_name = 'rulz'
 
 urlpatterns = [
-    url(r'home', views.rules_home, name='rulz_home'),
+    url(r'^', views.rules_home, name='rulz_home'),
     #rulz/index
     url(r'index', views.IndexView.as_view(), name='rulz_index'),
     #rulz/number
