@@ -4,7 +4,6 @@
 
 {% load staticfiles %}
 		
-
 		<!-- Banner -->
 			<section class="banner half">
 				<article>
@@ -55,29 +54,25 @@
 			</section>
 
 		<!-- One -->
+
+
 			<section id="one" class="wrapper style2">
 				<div class="inner">
-					<div class="grid-style">
+					<div class="gallery">
 						<div>
 							<div class="box">
 								<div class="image fit">
 									<img src="{% static 'images/pic02.jpg' %}" alt="" />
 								</div>
+
 								<div class="content">
-									<div class="fa-3x">
-									  <i class="fas fa-spinner fa-spin"></i>
-									  <i class="fas fa-circle-notch fa-spin"></i>
-									  <i class="fas fa-sync fa-spin"></i>
-									  <i class="fas fa-cog fa-spin"></i>
-									  <i class="fas fa-spinner fa-pulse"></i>
-									</div>
 									<header class="align-center">
-										<p>maecenas sapien feugiat ex purus</p>
-										<h2>Lorem ipsum dolor</h2>
+										<p>You make the rules</p>
+										<h2>You make the game</h2>
 									</header>
-									<p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+									<p>Create your own to make the game more fun</p>
 									<footer class="align-center">
-										<a href="#" class="button alt">Learn More</a>
+										<a href="{% url 'rulz:rulz_home' %}" class="button alt">Go find rules</a>
 									</footer>
 								</div>
 							</div>
@@ -90,22 +85,21 @@
 								</div>
 								<div class="content">
 									<header class="align-center">
-										<p>mattis elementum sapien pretium tellus</p>
-										<h2>Vestibulum sit amet</h2>
+										<p>Customized caps and printable totems</p>
+										<h2>Make the game your own</h2>
 									</header>
-									<p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+									<p>Discover</p>
 									<footer class="align-center">
-										<a href="#" class="button alt">Learn More</a>
+										<a href="{% url 'shop:shop_index' %}" class="button alt">Shop</a>
 									</footer>
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</section>
 
-		<!-- Two -->
+		<!-- Two 
 			<section id="two" class="wrapper style3">
 				<div class="inner">
 					<header class="align-center">
@@ -113,9 +107,9 @@
 						<h2>Morbi maximus justo</h2>
 					</header>
 				</div>
-			</section>
+			</section>-->
 
-		<!-- Three -->
+		<!-- Three 
 			<section id="three" class="wrapper style2">
 				<div class="inner">
 					<header class="align-center">
@@ -145,7 +139,7 @@
 						</div>
 					</div>
 				</div>
-			</section>
+			</section>-->
 
 
 {% endblock %}
