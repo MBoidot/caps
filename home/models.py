@@ -5,8 +5,7 @@ from django.dispatch import receiver
 from rulz.models import *
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    mail = models.EmailField(blank=False)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     location = models.CharField(max_length=30, blank=True)
     birth_date = models.DateField(null=True, blank=True)
     #caps_purchased = models.ForeignKey()
@@ -17,6 +16,8 @@ class Profile(models.Model):
     #totem_designed = models.ForeignKey()
     #game_purchased =models.ForeignKey()
 
+    def __str__(self):
+        return self.user.username + ' - ' + self.location
 
 
 

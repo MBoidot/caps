@@ -19,25 +19,76 @@
     <script src="{% static 'home/jquery.scrollex.min.js' %}"></script>
     <script src="{% static 'home/skel.min.js' %}"></script>	
     <script src="{% static 'home/util.js' %}"></script>	
-    <script src="{% static 'home/main.js' %}"></script>
+	<script src="{% static 'home/main.js' %}"></script>
+	<script>$(document).ready(function() {
+		var $navbar = $("#mNavbar");
+		
+		AdjustHeader(); // Incase the user loads the page from halfway down (or something);
+		$(window).scroll(function() {
+			AdjustHeader();
+		});
+		
+		function AdjustHeader(){
+
+		  if ($(window).scrollTop() > $(window).height() * 0.5) {
+			if (!$navbar.hasClass("navbar-fixed-top")) {
+			  $navbar.addClass("navbar-fixed-top");
+			}
+		  } else {
+			$navbar.removeClass("navbar-fixed-top");
+		  }
+		}
+	  });</script>
+
+
+
+
+
 </head>
 
 
 <body>
-	<header id="header" class="alt">
-		<div class="logo"><a href="{% url 'home:home' %}">IGE's awesome app <span>by Boid'</span></a></div>
+	
+<header>
+		{% block header %}
 
-		<a href="#menu">Menu</a>
-	</header>
+		{% endblock %}
+</header>
 
-<!-- Nav -->
-	<nav id="menu">
-		<ul class="links">
-			<li><a href="{% url 'home:home' %}">Home</a></li>
-			<li><a href="{% url 'rulz:rulz_home' %}">Rules</a></li>
-			<li><a href="{% url 'shop:shop_index' %}">Shop</a></li>
-		</ul>
+
+	<nav class="navbar navbar-inverse" id="mNavbar">
+		<div class="container-fluid">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="{% url 'home:home' %}">
+							<span class="glyphicon glyphicon-home" aria-hidden="=true"></span>&nbsp;
+							Home
+						</a>
+					</li>
+					<li class="">
+						<a href="{% url 'rulz:rulz_home' %}" >
+							<span class="glyphicon glyphicon-tasks" aria-hidden="=true"></span>&nbsp;
+							Rulz
+						</a>
+					</li>
+					<li class="">
+						<a href="{% url 'shop:shop_index' %}">
+							<span class="glyphicon glyphicon-shopping-cart" aria-hidden="=true"></span>&nbsp;
+							Shop
+						</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+						<li class="">
+							<a href="{% url 'home:home' %}">
+								<span class="glyphicon glyphicon-off" aria-hidden="=true"></span>&nbsp;
+								Logout
+							</a>
+						</li>
+				</ul>
+		</div>
 	</nav>
+
 
 
 {% block body %}
