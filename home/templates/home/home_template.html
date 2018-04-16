@@ -73,6 +73,7 @@
 							<header class="align-center">
 								<h2>Hot stuff</h2>
 							</header>
+							<a href="{% url 'home:register' %}" class="button alt">register</a>
 
 							<footer class="align-center">
 								<h2>make it banner style</h2>
@@ -83,6 +84,8 @@
 			</div>
 		</section>
 
+
+		{% if user.is_authenticated %}
 		<section id="one" class="wrapper style2">
 			<div class="inner">
 				<div>
@@ -97,6 +100,25 @@
 				</div>
 			</div>
 		</section>
+	{% else %} 
+	<section id="one" class="wrapper style2">
+		<div class="inner">
+			<div>
+				<div class="box">
+					<div class="content">
+						<header class="align-center">
+							<h2>come create account stuff</h2>
+						</header>
+						<p>Make it conditional (if logged, display buttons related to account, otherwise, display to see the create account options</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	  {% endif %} 
+
+
 
 			<section id="one" class="wrapper style2">
 				<div class="inner">

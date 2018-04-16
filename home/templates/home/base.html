@@ -76,12 +76,31 @@
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
+
+						{% if user.is_authenticated %}
+
 						<li class="">
-							<a href="{% url 'home:home' %}">
-								<span class="glyphicon glyphicon-off" aria-hidden="=true"></span>&nbsp;
-								Logout
-							</a>
+								<a href="{% url 'home:home' %}">
+									<span class="glyphicon glyphicon-off" aria-hidden="=true"></span>&nbsp;
+									login
+								</a>
 						</li>
+
+						<li class="">
+								<a href="{% url 'home:home' %}">
+									<span class="glyphicon glyphicon-off" aria-hidden="=true"></span>&nbsp;
+									signup
+								</a>
+						</li>
+						{% else %} 
+						<li class="">
+								<a href="{% url 'home:home' %}">
+									<span class="glyphicon glyphicon-off" aria-hidden="=true"></span>&nbsp;
+									Logout
+								</a>
+						</li>
+
+						{% endif %} 
 				</ul>
 		</div>
 	</nav>
