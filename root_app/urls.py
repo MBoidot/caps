@@ -4,6 +4,7 @@ from home import views
 from rulz import views
 from shop import views
 from . import views
+from home import views
 
 
 urlpatterns = [

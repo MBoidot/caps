@@ -17,17 +17,24 @@ class Profile(models.Model):
     #game_purchased =models.ForeignKey()
 
     def __str__(self):
-        return self.user.username + ' - ' + self.location
-
-
-
-
+        return self.user.username
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
+    if kwargs.get('created', False):
+         Profile.objects.create(user=kwargs['instance'])
+post_save.connect(create_user_profile,sender=User)
 
 @receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
+def save_user_profile(sender, instance, created,**kwargs):
+    if created:
+        instance.profile.save()
+
+@receiver(post_save, sender=User, dispatch_uid='save_new_user_profile')
+def update_user_profile(sender, instance, created, **kwargs):
+    if created:
+        profile = UserProfile(user=User)
+        profile.save()
+    else:
+        Profile.objects.create(user=User)
+        User.profile.save()
