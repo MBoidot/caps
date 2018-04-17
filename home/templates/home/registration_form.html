@@ -1,38 +1,6 @@
 {% extends "home/base.html" %}
-<script>
-        $(function() {
-          $( ".datepicker" ).datepicker({
-            changeMonth: true,
-            changeYear: true,
-            yearRange: "1900:2012",
-            // You can put more options here.
-      
-          });
-        });
-</script>
-
-
 {% block title%}Register{% endblock %}
 
-<!--<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12 col-md-7">
-            <div class="panel-body">
-                <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <div class="form-group">
-
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-success">Submit</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>-->
-
-<!--New tut form-->
 
 {% block body %}
 <div class="container-fluid">
@@ -45,8 +13,16 @@
 
 
                         <h1>Create a capser account</h1>
+                        <table border="1">
+                            {{  userform.as_table }}
 
+                            additional information
+
+                            {{ profileform.as_table }}
+                        </table>
+                        
                         {% include 'home/form-template.html' %}
+
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-success">Create account</button>
