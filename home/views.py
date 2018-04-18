@@ -4,6 +4,7 @@ from django.views import generic
 from django.views.generic import View
 from django.contrib.auth.forms import UserCreationForm
 from .forms import SignUpForm,ProfileForm
+from .models import Profile
 
 def HomeView(request):
     template_name = "home/home_template.html"
@@ -13,7 +14,7 @@ class UserFormView(View):
     Userform_class = SignUpForm
     Profileform_class = ProfileForm
     template_name = 'home/registration_form.html'
-    
+
     #display a blank form
     def get(self, request):
         userform = self.Userform_class(None)
@@ -26,7 +27,6 @@ class UserFormView(View):
         userform = self.Userform_class(request.POST)
         profileform = self.Profileform_class(request.POST)
 
-
         if userform.is_valid() and profileform.is_valid():
             user = userform.save(commit=False)
             #user.refresh_from_db()  # load the profile instance created by the signal
@@ -38,12 +38,12 @@ class UserFormView(View):
             email = userform.cleaned_data['email']
             user.save()
 
-
-            profile = Profile.objects.get(user = request.user)
-            Profile.objects.create(
+            new_profile = user_profile.objects.get(user = request.user)
+            new_profile.objects.create(
                 user=user,
                 location=profileform.cleaned_data.get('location'),
                 birth_date=profileform.cleaned_data.get('birth_date'))
+            new_profile.save()
 
             #return user objects if credentials are correct
             user = authenticate(username=username, password=password)
