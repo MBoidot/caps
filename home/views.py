@@ -38,12 +38,15 @@ class UserFormView(View):
             email = userform.cleaned_data['email']
             user.save()
 
-            new_profile = user_profile.objects.get(user = request.user)
-            new_profile.objects.create(
+
+            new_profile = profile_form.save(commit=False)
+            new_profile = Profile.objects.create(
                 user=user,
                 location=profileform.cleaned_data.get('location'),
-                birth_date=profileform.cleaned_data.get('birth_date'))
+                birth_date=profileform.cleaned_data.get('birth_date')
+            )
             new_profile.save()
+
 
             #return user objects if credentials are correct
             user = authenticate(username=username, password=password)
