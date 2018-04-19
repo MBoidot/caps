@@ -10,6 +10,46 @@ def HomeView(request):
     template_name = "home/home_template.html"
     return render(request,template_name)
 
+@login_required
+@transaction.atomic
+def update_profile(request):
+    if request.method == 'POST':
+        user_form = UserForm(request.POST, instance=request.user)
+        profile_form = ProfileForm(request.POST, instance=request.user.profile)
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, _('Your profile was successfully updated!'))
+            return redirect('settings:profile')
+        else:
+            messages.error(request, _('Please correct the error below.'))
+    else:
+        user_form = UserForm(instance=request.user)
+        profile_form = ProfileForm(instance=request.user.profile)
+    return render(request, 'profiles/profile.html', {
+        'user_form': user_form,
+        'profile_form': profile_form
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class UserFormView(View):
     Userform_class = SignUpForm
     Profileform_class = ProfileForm
@@ -28,7 +68,6 @@ class UserFormView(View):
         profileform = self.Profileform_class(request.POST)
 
         if userform.is_valid() and profileform.is_valid():
-
             user = userform.save(commit=False)
             #user.refresh_from_db()  # load the profile instance created by the signal
             password = userform.cleaned_data['password1']
@@ -38,13 +77,17 @@ class UserFormView(View):
             last_name=userform.cleaned_data['last_name']
             email = userform.cleaned_data['email']
             user.save()
-            #new_profile = profileform.save(commit=False)
 
+
+            new_profile = profile_form.save(commit=False)
+            
             new_profile = Profile.objects.create(
                 user=user,
                 location=profileform.cleaned_data.get('location'),
                 birth_date=profileform.cleaned_data.get('birth_date')
             )
+            new_profile.save()
+
 
             #return user objects if credentials are correct
             user = authenticate(username=username, password=password)
@@ -55,9 +98,3 @@ class UserFormView(View):
                     return redirect('home:home')
 
         return render (request, self.template_name, {'userform': userform, 'profileform':profileform})
-
-"""             new_profile = Profile.objects.create(
-                user=user,
-                location=profileform.cleaned_data.get('location'),
-                birth_date=profileform.cleaned_data.get('birth_date')
-            ) """
