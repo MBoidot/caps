@@ -43,8 +43,6 @@
 
 </head>
 
-
-<body>
 	
 <header>
 		{% block header %}
@@ -78,34 +76,42 @@
 				<ul class="nav navbar-nav navbar-right">
 
 						{% if user.is_authenticated %}
-
 						<li class="">
-								<a href="{% url 'home:home' %}">
-									<span class="glyphicon glyphicon-off" aria-hidden="=true"></span>&nbsp;
-									login
-								</a>
+							<a href="{% url 'home:home' %}">
+								<span class="glyphicon glyphicon-user" aria-hidden="=true"></span>&nbsp;
+								{{ user.username }} Profile
+							</a>
 						</li>
 
 						<li class="">
-								<a href="{% url 'home:home' %}">
-									<span class="glyphicon glyphicon-off" aria-hidden="=true"></span>&nbsp;
-									signup
-								</a>
+							<a href="{% url 'home:logout' %}">
+								<span class="glyphicon glyphicon-off" aria-hidden="=true"></span>&nbsp;
+								Logout
+							</a>
 						</li>
+
 						{% else %} 
 						<li class="">
-								<a href="{% url 'home:home' %}">
-									<span class="glyphicon glyphicon-off" aria-hidden="=true"></span>&nbsp;
-									Logout
+							<a href="{% url 'home:login' %}">
+								<span class="glyphicon glyphicon-upload" aria-hidden="=true"></span>&nbsp;
+								login
+							</a>
+						</li>
+
+						<li class="">
+								<a href="{% url 'home:register' %}">
+									<span class="glyphicon glyphicon-upload" aria-hidden="=true"></span>&nbsp;
+									Signup
 								</a>
 						</li>
+
 
 						{% endif %} 
 				</ul>
 		</div>
 	</nav>
 
-
+<body>
 {% block body %}
 
 {% endblock %}
@@ -122,8 +128,6 @@
 			<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 		</ul>
 	</div>
-	<div class="copyright">
-		&copy; Untitled. All rights reserved. Template by <a href="https://templated.co">TEMPLATED</a>.
-	</div>
+
 </footer>
 </html>

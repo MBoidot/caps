@@ -1,8 +1,9 @@
-{% extends "home/base.html" %}
-{% block title%}Register{% endblock %}
+{% extends 'home/base.html' %}
 
+{% block title %} Login {% endblock %}
 
 {% block body %}
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12 col-md-7">
@@ -11,18 +12,14 @@
                     <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
 
-                        <h1>Create a capser account</h1>
+                        <h1>Login</h1>
                         <table border="1">
-                            {{  userform.as_table }}
-
-                            {{ profileform.as_table }}
-                        </table>
                         
                         {% include 'home/form-template.html' %}
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit">Create account</button>
+                                <button type="submit">Login</button>
                             </div>
                         </div>
                     </form>
@@ -31,4 +28,7 @@
         </div>
     </div>
 </div>
+
+
+
 {% endblock %}
