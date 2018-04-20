@@ -5,7 +5,7 @@
 
 
 /*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
+[ FONT ]
 
 @font-face {
   font-family: Poppins-Regular;
@@ -25,7 +25,7 @@
 @font-face {
   font-family: Poppins-SemiBold;
   src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
-}
+}*/
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
@@ -90,7 +90,6 @@ input {
 
 input[type="number"] {
     -moz-appearance: textfield;
-    appearance: none;
     -webkit-appearance: none;
 }
 
@@ -162,7 +161,7 @@ iframe {
 [ login ]*/
 
 .limiter {
-  width: 100%;
+  width: 75%;
   margin: 0 auto;
 }
 
@@ -180,7 +179,20 @@ iframe {
   padding: 15px;
   background: #ebeeef;
 }
-
+.container-login75 {
+  width: 75%;  
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #ebeeef;
+}
 
 .wrap-login100 {
   width: 670px;
@@ -189,6 +201,15 @@ iframe {
   overflow: hidden;
   position: relative;
 }
+
+.wrap-login75 {
+  width: 50px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
 
 /*==================================================================
 [ Title form ]*/
@@ -209,6 +230,7 @@ iframe {
   background-size: cover;
   background-position: center;
 
+
   padding: 70px 15px 74px 15px;
 }
 
@@ -219,6 +241,7 @@ iframe {
   text-transform: uppercase;
   line-height: 1.2;
   text-align: center;
+
 }
 
 .login100-form-title::before {
@@ -231,6 +254,8 @@ iframe {
   top: 0;
   left: 0;
   background-color: rgba(54,84,99,0.7);
+  background-image: url( "{% static 'image/bg.jpg' %}");
+
 }
 
 
