@@ -3,7 +3,6 @@ from django.views import generic
 from django.views.generic import DetailView, FormView
 from django.views.generic.edit import CreateView
 from rulz.models import Rulz
-from .forms import RulzCreateForm
     
 def rules_home(request):
     template_name = "rulz/rulz_home_template.html"
