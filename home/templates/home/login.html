@@ -6,8 +6,6 @@
 
 {% block body %}
 {% load staticfiles %}
-
-<body>
 	
 	<div class="limiter">
 		<div class="container-login100">
@@ -21,6 +19,8 @@
                 <form class="login100-form validate-form" action="" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% include 'home/form-template.html' %}
+
+
                     <!--<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
                         <span class="label-input100">Username</span>
                         
@@ -50,15 +50,17 @@
                     </div>
     
                     <div class="container-login100-form-btn">
-                        <button type="submit" class="btn btn-default">
+                        <button type="submit" class="btn btn-danger">
                             Login
                         </button>
-                    </div>-->
+                    </div>
+
+
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" class="btn btn-default">Login</button>
                         </div>
-                    </div>
+                    </div>-->
 
                 </form>
 
@@ -67,43 +69,6 @@
 	</div>
 
 
-<!--<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12 col-md-7">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
-                        {% csrf_token %}
 
-                        <h1>Login</h1>
-                        <table border="1">
-                        
-                        {% include 'home/form-template.html' %}
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default">Login</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="limiter">
-    <div class="container-login100">
-        <div class="wrap-login100">
-            <div class="login100-form-title">
-                <span class="login100-form-title-1">
-                    Sign In
-                </span>
-            </div>
-
-            
-        </div>
-    </div>
-</div>-->
 
 {% endblock %}
