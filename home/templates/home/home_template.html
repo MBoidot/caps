@@ -1,57 +1,62 @@
 {% extends 'home/base.html' %}
+<title>{% block title %} Homepage {% endblock %}</title>
+{% block header %}
+{% load staticfiles %}
+
+<section class="banner half">
+		<article>
+			<img src="{% static 'images/single_grey_caps.jpg' %}" alt="" />
+			<div class="inner">
+				<header>
+					<p>Home of Caps</p>
+					<h2>Welcome</h2>
+				</header>
+			</div>
+		</article>
+		<article>
+			<img src="{% static 'images/totem_drawing.jpg' %}" alt="" />
+			<div class="inner">
+				<header>
+					<p>Push your game further with</p>
+					<h2><a href="{% url 'shop:shop_index' %}">Totems add-ons</a></h2>
+				</header>
+			</div>
+		</article>
+		<article>
+			<img src="{% static 'images/slide03.jpg' %}"  alt="" />
+			<div class="inner">
+				<header>
+					<p>Collect exclusive Caps series</p>
+					<h2><a href="{% url 'shop:shop_index' %}">Get them all !</a></h2>
+				</header>
+			</div>
+		</article>
+		<article>
+			<img src="{% static 'images/slide04.jpg' %}"  alt="" />
+			<div class="inner">
+				<header>
+					<p>Extend the game :</p>
+					<h2><a href="{% url 'rulz:rulz_home' %}">Share your rules</a></h2>
+				</header>
+			</div>
+		</article>
+		<article>
+			<img src="{% static 'images/trophy_collection.jpg' %}"  alt="" />
+			<div class="inner">
+				<header>
+					<p>Become the best capser</p>
+					<h2>Of all time !</h2>
+				</header>
+			</div>
+		</article>
+	</section>
+
+{% endblock %}  <!--end of header block-->
+
 
 {% block body %}
 
 {% load staticfiles %}
-		
-		<!-- Banner -->
-			<section class="banner half">
-				<article>
-					<img src="{% static 'images/single_grey_caps.jpg' %}" alt="" />
-					<div class="inner">
-						<header>
-							<p>Home of Caps</p>
-							<h2>Welcome</h2>
-						</header>
-					</div>
-				</article>
-				<article>
-					<img src="{% static 'images/totem_drawing.jpg' %}" alt="" />
-					<div class="inner">
-						<header>
-							<p>Push your game further with</p>
-							<h2><a href="{% url 'shop:shop_index' %}">Totems add-ons</a></h2>
-						</header>
-					</div>
-				</article>
-				<article>
-					<img src="{% static 'images/slide03.jpg' %}"  alt="" />
-					<div class="inner">
-						<header>
-							<p>Collect exclusive Caps series</p>
-							<h2><a href="{% url 'shop:shop_index' %}">Get them all !</a></h2>
-						</header>
-					</div>
-				</article>
-				<article>
-					<img src="{% static 'images/slide04.jpg' %}"  alt="" />
-					<div class="inner">
-						<header>
-							<p>Extend the game :</p>
-							<h2><a href="{% url 'rulz:rulz_home' %}">Share your rules</a></h2>
-						</header>
-					</div>
-				</article>
-				<article>
-					<img src="{% static 'images/trophy_collection.jpg' %}"  alt="" />
-					<div class="inner">
-						<header>
-							<p>Become the best capser</p>
-							<h2>Of all time !</h2>
-						</header>
-					</div>
-				</article>
-			</section>
 
 		<!-- One -->
 
@@ -63,6 +68,7 @@
 							<header class="align-center">
 								<h2>Hot stuff</h2>
 							</header>
+							<a href="{% url 'home:register' %}" class="button alt">register</a>
 
 							<footer class="align-center">
 								<h2>make it banner style</h2>
@@ -73,20 +79,43 @@
 			</div>
 		</section>
 
-		<section id="one" class="wrapper style2">
-			<div class="inner">
-				<div>
-					<div class="box">
-						<div class="content">
-							<header class="align-center">
-								<h2>Member section</h2>
-							</header>
-							<p>Make it conditional (if logged, display buttons related to account, otherwise, display to see the create account options</p>
+
+		{% if user.is_authenticated %}
+			<section id="one" class="wrapper style2">
+				<div class="inner">
+					<div>
+						<div class="box">
+							<div class="content">
+								<header class="align-center">
+									<h2>Member section</h2>
+								</header>
+								<p>You are logged in, cool stuff here</p>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		{% else %} 
+
+
+			<section id="one" class="wrapper style2">
+				<div class="inner">
+					<div>
+						<div class="box">
+							<div class="content">
+								<header class="align-center">
+									<h2>come create account stuff</h2>
+								</header>
+								<p>General stuff here</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+	  	{% endif %} 
+
+
 
 			<section id="one" class="wrapper style2">
 				<div class="inner">
