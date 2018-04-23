@@ -12,26 +12,15 @@
             <span class="text-danger small">{{ field.errors }}</span>
         </div>
 
-        <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-            <span class="label-input100">{{ field.label_tag }}</span>
-            
-            <input class="input100" type="{{ field }}", name="username", placeholder="Enter username">
-            <span class="focus-input100"></span>
-        </div>
 
+        <div class="validate-input m-b-26" >
+            <label class="label-input100">{{ field.label_tag }}</label>
 
+            <div class="input100">{{ field }}</div>
 
-        <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-
-            <!--<div class="col-sm-8">{{ field }}</div>-->
-
-            <span class="focus-input100"></span>
-        </div>
-
-        <label class="control-label col-sm-3">{{ field.label_tag }}</label>
-        <div class="col-sm-7">{{ field }}</div>
-        <div class="col-sm-offset-2 col-sm-10">
-                <span class="text-danger small">{{ field.help_text }}</span>
+            <div class="col-sm-offset-2 col-sm-10">
+                    <span class="text-danger small">{{ field.help_text }}</span>
+            </div>
         </div>
     </div>
 

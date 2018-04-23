@@ -54,8 +54,6 @@
 {% endblock %}  <!--end of header block-->
 
 
-<!-- position of the sticky navbar in the base template-->
-
 {% block body %}
 
 {% load staticfiles %}
@@ -83,37 +81,39 @@
 
 
 		{% if user.is_authenticated %}
-		<section id="one" class="wrapper style2">
-			<div class="inner">
-				<div>
-					<div class="box">
-						<div class="content">
-							<header class="align-center">
-								<h2>Member section</h2>
-							</header>
-							<p>Make it conditional (if logged, display buttons related to account, otherwise, display to see the create account options</p>
+			<section id="one" class="wrapper style2">
+				<div class="inner">
+					<div>
+						<div class="box">
+							<div class="content">
+								<header class="align-center">
+									<h2>Member section</h2>
+								</header>
+								<p>You are logged in, cool stuff here</p>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-	{% else %} 
-	<section id="one" class="wrapper style2">
-		<div class="inner">
-			<div>
-				<div class="box">
-					<div class="content">
-						<header class="align-center">
-							<h2>come create account stuff</h2>
-						</header>
-						<p>Make it conditional (if logged, display buttons related to account, otherwise, display to see the create account options</p>
+			</section>
+		{% else %} 
+
+
+			<section id="one" class="wrapper style2">
+				<div class="inner">
+					<div>
+						<div class="box">
+							<div class="content">
+								<header class="align-center">
+									<h2>come create account stuff</h2>
+								</header>
+								<p>General stuff here</p>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
+			</section>
 
-	  {% endif %} 
+	  	{% endif %} 
 
 
 
