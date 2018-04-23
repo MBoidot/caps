@@ -55,9 +55,3 @@ class UserFormView(View):
                     return redirect('home:home')
 
         return render (request, self.template_name, {'userform': userform, 'profileform':profileform})
-
-"""             new_profile = Profile.objects.create(
-                user=user,
-                location=profileform.cleaned_data.get('location'),
-                birth_date=profileform.cleaned_data.get('birth_date')
-            ) """

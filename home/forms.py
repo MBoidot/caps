@@ -19,8 +19,3 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('location', 'birth_date')
-
-
-class SuperProfile(SuperForm):
-    signupform = FormField(SignUpForm)
-    profileform = FormField(ProfileForm)

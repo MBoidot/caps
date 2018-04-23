@@ -1,12 +1,27 @@
-{% for field in form %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 
+{% for field in form %}
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <span class="text-danger small">{{ field.errors }}</span>
         </div>
-        <label class="control-label col-sm-2">{{ field.label_tag}}</label>
-        <div class="col-sm-10">{{ field }}</div>
-    </div>
 
+
+        <div class="validate-input m-b-26" >
+            <label class="label-input100">{{ field.label_tag }}</label>
+
+            <div class="input100">{{ field }}</div>
+
+            <div class="col-sm-offset-2 col-sm-10">
+                    <span class="text-danger small">{{ field.help_text }}</span>
+            </div>
+        </div>
+    </div>
 
 {% endfor %}
