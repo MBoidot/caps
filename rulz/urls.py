@@ -12,6 +12,6 @@ urlpatterns = [
     # /rulz/details
     url(r'^(?P<pk>[0-9]+)/$',views.rules_detail.as_view(),name='rulz_detail'),
 
-    #rulz/create/
-    url(r'^create/$', views.rules_create.as_view() , name='rulz_create'),
+    #rulz/create
+    url(r'^create/',views.rules_create.as_view(),name='rulz_create')
 ]

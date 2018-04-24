@@ -22,11 +22,7 @@ class rules_detail(DetailView):
     template_name = 'rulz/rulz_detail_template.html'
 
 class rules_create(CreateView):
-    model=Rulz
-    form_class = RulzCreateForm
-    fields=['title', 'content','country','city' , 'player_num', 'complexity']
-    template_name="rulz/rulz_create_form.html"
+    form = RulzCreateForm
+    template_name = "home/templates/rulz/rulz_create_form.html"
 
-    def get(self, request):
-        form = self.form_class(None)
-        return render (request, self.template_name, {'form': form})
+
