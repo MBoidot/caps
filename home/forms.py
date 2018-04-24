@@ -2,7 +2,6 @@ from django.contrib.auth.models import User
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile
-from django_superform import FormField, SuperForm
 
 class SignUpForm(UserCreationForm):
     password1 = forms.CharField(label=("Password"), widget=forms.PasswordInput) 
