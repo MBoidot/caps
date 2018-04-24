@@ -12,5 +12,7 @@ class Rulz(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User,on_delete=models.CASCADE,default=1)
 
+
+
     def get_absolute_url(self):
-        return reverse('rulz:rulz_home')
+        return reverse('rulz:rulz_detail',kwargs={'pk':self.pk})

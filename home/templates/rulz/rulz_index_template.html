@@ -1,0 +1,24 @@
+{% extends 'Rulz/Rulz_base.html' %}
+<title>{% block title %} Rulz index page {% endblock %}</title>
+
+
+{% block body %}
+
+{% load staticfiles %}
+
+    {% if all_rulz %}
+        <ul>
+            <li>
+                <a href="{% url 'rulz:rulz_detail' rule.id %}">{{rule.title}}</a>
+            </li>
+        </ul>
+
+        <h1>I'm the rulz list</h1>
+
+    {% else %}
+
+        <h1>should create rulz</h1>
+        <a href="{% url 'rulz:rulz_index' %}" class="button alt">Go create Rule</a>
+    {% endif %}
+
+{% endblock %}
