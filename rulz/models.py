@@ -13,6 +13,5 @@ class Rulz(models.Model):
     author = models.ForeignKey(User,on_delete=models.CASCADE,default=1)
 
 
-
     def get_absolute_url(self):
         return reverse('rulz:rulz_detail',kwargs={'pk':self.pk})

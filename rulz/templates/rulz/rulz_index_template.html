@@ -7,13 +7,16 @@
 {% load staticfiles %}
 
     {% if all_rulz %}
-        <ul>
-            <li>
-                <a href="{% url 'rulz:rulz_detail' rule.id %}">{{rule.title}}</a>
-            </li>
-        </ul>
+    <h1>I'm the rulz list</h1>
+        {% for rule in all_rulz %}
+            <ul>
+                <li>
+                    <a href="{% url 'rulz:rulz_detail' rule.pk %}">{{rule.title}}</a>
+                </li>
+            </ul>
+        {% endfor %}
 
-        <h1>I'm the rulz list</h1>
+            
 
     {% else %}
 

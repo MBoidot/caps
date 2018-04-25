@@ -4,4 +4,4 @@ from . import models
 class RulzCreateForm(ModelForm):
     class Meta:
         model=models.Rulz
-        fields = '__all__'
+        fields = ['title','content','country','city','player_num','complexity']
