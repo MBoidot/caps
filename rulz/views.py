@@ -30,6 +30,7 @@ class rules_detail(DetailView):
 class rules_create(CreateView):
     model = Rulz
     Rulzform_class = RulzCreateForm
+    fields=['title','content','country','city','player_num','complexity']
 
     #process form data
     def post(self, request):

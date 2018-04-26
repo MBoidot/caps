@@ -11,7 +11,7 @@
         {% for rule in all_rulz %}
             <ul>
                 <li>
-                    <a href="{% url 'rulz:rulz_detail' rule.pk %}">{{rule.title}}</a>
+                    <a href="{% url 'rulz:rulz_detail' rule.pk %}">{{rule.title}} . {{rule.author}}</a>
                 </li>
             </ul>
         {% endfor %}
