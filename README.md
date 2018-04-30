@@ -1,6 +1,6 @@
 # Caps project
 
-The caps project. A game for young and old, based on the famous beer game, adapted with ne features
+The caps project. A game for young and old, based on the famous beer game, adapted with neW features
 
 It uses template from https://templated.co/ called "Hielo" merged in the home/base.html template and the home_template.html template
 
