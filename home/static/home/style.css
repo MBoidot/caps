@@ -4333,3 +4333,7 @@ body{
   .sticky + .content {
 	padding-top: 102px;
   }
+
+  .comment {
+    margin: 20px 0px 20px 20px;
+}

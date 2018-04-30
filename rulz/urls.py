@@ -15,4 +15,5 @@ urlpatterns = [
 
     #rulz/create
     url(r'^create/',login_required(views.rules_create.as_view()),name='rulz_create'),
+    url(r'^(?P<pk>\d+)/comment/$', views.add_comment_to_rule,name='add_comment_to_rule')
 ]

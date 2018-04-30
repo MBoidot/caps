@@ -15,4 +15,34 @@
         </div>
     </div>
 
+
+
+<a class="btn btn-default" href="{% url 'rulz:add_comment_to_rule' pk=rulz.pk %}">Add comment</a>
+</br>
+
+
+
+{% for comment in comment_list %}
+<div class="container-fluid">
+    <div class="col-sm-offset-2 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Posted by {{ comment.author }} on {{ comment.created_on }}</h3>
+            </div>
+            <div class="panel-body">
+                <p>{{ comment.text|linebreaks }}</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% empty %}
+
+    <p>No comments here yet </p>
+
+{% endfor %}
+
+
+<p><a class="btn btn-default" href="{% url 'rulz:rulz_index' %}">Rulz List</a></p>
+
 {% endblock %}
