@@ -20,25 +20,16 @@ class rules_index(generic.ListView):
     def get_queryset(self):
         return Rulz.objects.select_related().annotate(comment_count=Count('rcomments'))
 
-    def get_context_data(self, **kwargs):
-        context = super(rules_index, self).get_context_data(**kwargs)
-        context['count'] = self.get_queryset().count()
-        return context
-
-
 
 class rules_detail(DetailView):
     model = Rulz
     template_name = 'rulz/rulz_detail_template.html'
-    def get_context_data(self):
-        return self.RulzComment.all()
-
-'''   def get_context_data(self, **kwargs):
+    def get_context_data(self,**kwargs):
         # Call the base implementation first to get a context
         context = super().get_context_data(**kwargs)
         # Add in a QuerySet of all the books
-        context['comment_list'] = RulzComment.objects.all()
-        return context'''
+        context['comment_list'] = self.object.rcomments.all()
+        return context
 
 
 

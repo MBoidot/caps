@@ -18,10 +18,13 @@ class Rulz(models.Model):
 
     def get_absolute_url(self):
         return reverse('rulz:rulz_detail',kwargs={'pk':self.pk})
+    
+    def __str__(self):
+        return self.title + ' ' + str(self.pk)
 
 
 class RulzComment(models.Model):
-    rule=models.ForeignKey('rulz.Rulz', related_name='rcomments', on_delete=models.CASCADE)
+    rule=models.ForeignKey('rulz.Rulz', on_delete=models.CASCADE,related_name='rcomments')
     author=models.ForeignKey(User,on_delete=models.CASCADE, default=1)
     text=models.TextField()
     created_on=models.DateTimeField(default=timezone.now)
