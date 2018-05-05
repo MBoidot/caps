@@ -82,61 +82,63 @@
 
 		{% if user.is_authenticated %}
 			<section id="one" class="wrapper style2">
-				<div class="inner">
-					<div>
-						<div class="box">
-							<div class="content">
-								<header class="align-center">
-									<h2>Member section<p>You are logged in, cool stuff here</p></h2>
-								</header>
-								
-								<div class="container-fluid">
-										<div class="container">
-												<div class="row">
-														 <div class="col-md-12">
-															 <div class="row">
-																 <div class="col-md-4">
-																	<div class="panel panel-default">
-																		<div class="panel-heading">
-																			<h4 class="panel-title">Rulz stats</h4>
-																		</div>
-																		<div class="panel-body">
-																			<h4>You've posted <span class="badge">{{myrulz}}</span> Rulz</h4>
-																			<h4>Site has a total of <span class="badge">{{total_rulz}}</span> Rulz</h4>
-																			<h4>Your Rulz represent <span class="badge">{{ rulz_percentage|floatformat:0 }}</span> %</h4>
-																		</div>
-																	</div>
-																 </div>
-																 <div class="col-md-4">
-																	<div class="panel panel-default">
-																		<div class="panel-heading">
-																			<h4 class="panel-title">Comments stats</h4>
-																		</div>
-																		<div class="panel-body">
-																			<h4>You've posted <span class="badge">{{mycomments}}</span> comments</h4>
-																			<h4>Site has a total of <span class="badge">{{total_comments}}</span> comments</h4>
-																			<h4>Your comments represent <span class="badge">{{ comments_percentage|floatformat:0 }}</span> %</h4>
+				<div class="container-fluid">
+					<div class="inner">
+						<div>
+							<div class="box">
+								<div class="content">
+									<header class="align-center">
+										<h2>Member section<p>You are logged in, cool stuff here</p></h2>
+									</header>
+									
+									<div class="container-fluid">
+											<div class="container">
+													<div class="row">
+															<div class="col-md-12">
+																<div class="row">
+																	<div class="col-md-4">
+																		<div class="panel panel-default">
+																			<div class="panel-heading">
+																				<h4 class="panel-title">Rulz stats</h4>
+																			</div>
+																			<div class="panel-body">
+																				<h4>You've posted <span class="badge">{{myrulz}}</span> Rulz</h4>
+																				<h4>Site has a total of <span class="badge">{{total_rulz}}</span> Rulz</h4>
+																				<h4>Your Rulz represent <span class="badge">{{ rulz_percentage|floatformat:0 }}</span> %</h4>
+																			</div>
 																		</div>
 																	</div>
-																 </div>
-																 <div class="col-md-4">
-																	<div class="panel panel-default">
-																		<div class="panel-heading">
-																			<h4 class="panel-title">Comments stats</h4>
+																	<div class="col-md-4">
+																		<div class="panel panel-default">
+																			<div class="panel-heading">
+																				<h4 class="panel-title">Comments stats</h4>
+																			</div>
+																			<div class="panel-body">
+																				<h4>You've posted <span class="badge">{{mycomments}}</span> comments</h4>
+																				<h4>Site has a total of <span class="badge">{{total_comments}}</span> comments</h4>
+																				<h4>Your comments represent <span class="badge">{{ comments_percentage|floatformat:0 }}</span> %</h4>
+																			</div>
 																		</div>
-																		<div class="panel-body">
-																			<h4>Capser since <span class="badge">{{user.date_joined}}</span> </h4>
-																			<h4>Site has <span class="badge">{{nb_users}}</span>users</h4>
+																	</div>
+																	<div class="col-md-4">
+																		<div class="panel panel-default">
+																			<div class="panel-heading">
+																				<h4 class="panel-title">Comments stats</h4>
+																			</div>
+																			<div class="panel-body">
+																				<h4>Capser since <span class="badge">{{user.date_joined}}</span> </h4>
+																				<h4>Site has <span class="badge">{{nb_users}}</span>users</h4>
+																			</div>
 																		</div>
 																	</div>
 																</div>
-															 </div>
-														 </div>
-													 </div>
-												 </div>
+															</div>
+														</div>
+													</div>
+												</div>
 											</div>
-										</div>
-									</div>	
+										</div>	
+									</div>
 								</div>
 							</div>
 						</div>

@@ -32,9 +32,6 @@ class rules_detail(DetailView):
         return context
 
 
-
-
-
 #login required decorator placed in the urls.py file
 class rules_create(CreateView):
     model = Rulz
@@ -52,22 +49,6 @@ class rules_create(CreateView):
 
         return redirect('home:home')
 
-
-'''class add_comment_to_rule(CreateView):
-    model = RulzComment
-    RulzCommentform_class = RulzCommentForm
-    fields=['text']
-
-    def post(self, request):
-        rulzcommentform = self.RulzCommentform_class(request.POST)
-
-        if rulzcommentform.is_valid():
-            rcomment = rulzcommentform.save(commit=False)
-            rcomment.rule = request.rule
-            rcomment.author = request.user
-
-        return redirect('rulz:rulz_detail', pk=Rulz.pk)'''
-        
 
 def add_comment_to_rule(request, pk):
     rule = get_object_or_404(Rulz, pk=pk)
