@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'rulz.apps.RulzConfig',
     'shop.apps.ShopConfig',
+    'league.apps.LeagueConfig',
 ]
 
 MIDDLEWARE = [
