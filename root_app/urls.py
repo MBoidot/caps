@@ -10,6 +10,7 @@ from home import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^rules/',include('rulz.urls')),
+    url(r'^league/',include('league.urls')),   
     url(r'^shop/',include('shop.urls')),
     url(r'^',include('home.urls')),
 ]

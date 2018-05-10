@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />   
-    <title>{% block title %}Shop_base{% endblock %}</title>
+    <title>{% block title %} Rulz_base {% endblock %}</title>
     
     {% load static %}
     
@@ -26,7 +26,7 @@
 <body>
 
 
-			<nav class="navbar navbar-inverse" style="background-color:darkslategray;">
+			<nav class="navbar navbar-inverse"  style="background-color:dodgerblue;">
 				<div class="container-fluid">
 					<!-- Header -->
 					<div class="navbar-header">
@@ -38,8 +38,8 @@
 						
 					</div>
 					<!-- Items -->
-					<div class="collapse navbar-collapse" id="topnavbar" style="background-color:darkslategray;">
-						<ul class="nav navbar-nav">
+					<div class="collapse navbar-collapse" id="topnavbar" style="background-color:dodgerblue;">
+						<ul class="nav navbar-nav" style="background-color:dodgerblue;">
 							<li class="">
 								<a href="{% url 'home:home' %}">
 									<span class="glyphicon glyphicon-home" aria-hidden="=true"></span>&nbsp;
@@ -52,52 +52,54 @@
 									Rulz
 								</a>
 							</li>
-							<li class="">
-								<a href="{% url 'league:league_index' %}">
+							<li class="active">
+								<a href="{% url 'league:league_index' %}" style="background-color:deepskyblue">
 									<span class="glyphicon glyphicon-grain" aria-hidden="=true"></span>&nbsp;
 									Leagues
 								</a>
 							</li>
-							<li class="active">
-								<a href="{% url 'shop:shop_index' %}" style="background-color:olivedrab;">
+							<li class="">
+								<a href="{% url 'shop:shop_index' %}">
 									<span class="glyphicon glyphicon-shopping-cart" aria-hidden="=true"></span>&nbsp;
 									Shop
 								</a>
 							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							{% if user.is_authenticated %}
-							<li class="">
-								<a href="{% url 'home:home' %}">
-									<span class="glyphicon glyphicon-user" aria-hidden="=true"></span>&nbsp;
-									{{ user.username }}
-								</a>
-							</li>
-	
-							<li class="">
-								<a href="{% url 'home:logout' %}">
-									<span class="glyphicon glyphicon-off" aria-hidden="=true"></span>&nbsp;
-									Logout
-								</a>
-							</li>
-	
-							{% else %} 
-							<li class="">
-								<a href="{% url 'home:login' %}">
+
+
+						{% if user.is_authenticated %}
+						<li class="">
+							<a href="{% url 'home:home' %}">
+								<span class="glyphicon glyphicon-user" aria-hidden="=true"></span>&nbsp;
+								{{ user.username }}
+							</a>
+						</li>
+
+						<li class="">
+							<a href="{% url 'home:logout' %}">
+								<span class="glyphicon glyphicon-off" aria-hidden="=true"></span>&nbsp;
+								Logout
+							</a>
+						</li>
+
+						{% else %} 
+						<li class="">
+							<a href="{% url 'home:login' %}">
+								<span class="glyphicon glyphicon-upload" aria-hidden="=true"></span>&nbsp;
+								login
+							</a>
+						</li>
+
+						<li class="">
+								<a href="{% url 'home:register' %}">
 									<span class="glyphicon glyphicon-upload" aria-hidden="=true"></span>&nbsp;
-									login
+									Signup
 								</a>
-							</li>
-	
-							<li class="">
-									<a href="{% url 'home:register' %}">
-										<span class="glyphicon glyphicon-upload" aria-hidden="=true"></span>&nbsp;
-										Signup
-									</a>
-							</li>
-	
-	
-							{% endif %} 
+						</li>
+
+
+						{% endif %} 
 						</ul>
 
 
@@ -115,7 +117,7 @@
 
 </body>
 
-<footer id="footer" style="background-color:darkslategray;">
+<footer id="footer" style="background-color:dodgerblue">
 	<div class="container">
 		<ul class="icons">
 			<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
