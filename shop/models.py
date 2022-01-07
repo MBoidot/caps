@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 class shop_item(models.Model):
     item_type = models.CharField(max_length=255)
     user_designed = models.BooleanField() #tells if a user has uploaded the model
-    user_fk = models.ForeignKey(User,on_delete='CASCADE')
+    user_fk = models.ForeignKey(User,on_delete=models.CASCADE)
     designer_designed = models.BooleanField()
     designer_name = models.CharField(max_length=255)
     price =  models.DecimalField(max_digits=8, decimal_places=2)
