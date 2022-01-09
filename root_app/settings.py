@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
+    'rulz.apps.RulzConfig',
+    'shop.apps.ShopConfig',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +66,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries' : {
+                'staticfiles': 'django.templatetags.static', 
+            }
         },
     },
 ]
@@ -123,3 +128,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR,'usr_media')
 MEDIA_URL = '/usr_media/'
 
+LOGOUT_REDIRECT_URL = 'home:home'

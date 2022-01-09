@@ -1,0 +1,22 @@
+
+{% extends 'rulz/Rulz_base.html' %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class=col-sm-12 col-md-7>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% include 'rulz/form-template.html' %}
+                        <input type="submit" value="Save" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
