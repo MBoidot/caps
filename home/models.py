@@ -12,3 +12,11 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+class category(models.Model):
+    name = models.CharField(max_length=25)
+
+class Totem(models.Model):
+    name = models.CharField(max_length=25)
+    category = models.ForeignKey(category, on_delete=models.CASCADE)
+
